@@ -18,7 +18,7 @@ const Popularjobs = () => {
 
 
   const {data, isLoading, error} = useFetch('search', {
-    query: 'Python developer in Texas, USA',
+    query: 'React developer',
      num_pages: '1'
   })
   return (
@@ -37,7 +37,7 @@ const Popularjobs = () => {
           renderItem={({item}) => <PopularJobCard 
           item={item} 
           selectedJob={selectedJob} 
-          handleCradPress={handleCardPress}
+          handleCradPress={() => handleCardPress(item)}
           />}
           keyExtractor={item => item?.job_id}
           contentContainerStyle={{columnGap: SIZES.medium}}
